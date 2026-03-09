@@ -36,7 +36,6 @@
   "proof": {
     "version": "none",
     "codeHash": "demo",
-    "vkey": null,
     "attestations": ["demo-only"]
   }
 }
