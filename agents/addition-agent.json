@@ -1,0 +1,42 @@
+{
+  "protocolVersion": "va-uri/1.0",
+  "name": "Addition Agent Demo",
+  "description": "Returns bids and computes a+b for execute requests. Public test agent for end-to-end discovery and execution validation.",
+  "tags": ["math", "demo", "addition", "compute"],
+  "capabilities": {
+    "taskTypes": ["math_addition"],
+    "domains": ["math"],
+    "supportedSteps": ["discover_solution", "execute_solution"],
+    "canDecompose": false,
+    "canExecute": true
+  },
+  "constraints": {
+    "regions": ["global"],
+    "supportedCurrencies": ["SOL"],
+    "minBudgetLamports": 1000,
+    "maxBudgetLamports": 1000000
+  },
+  "sla": {
+    "expectedEtaMinutes": 1,
+    "p95EtaMinutes": 1,
+    "uptime30d": 0.99,
+    "successRate30d": 0.99
+  },
+  "pricingHints": {
+    "feeModel": "fixed",
+    "baseFeeLamports": 5000,
+    "typicalMinLamports": 5000,
+    "typicalMaxLamports": 55000
+  },
+  "integration": {
+    "bidEndpoint": "https://veriagent-addition-agent.m-gray1270.workers.dev/bid",
+    "executeEndpoint": "https://veriagent-addition-agent.m-gray1270.workers.dev/execute",
+    "authMethod": "none"
+  },
+  "proof": {
+    "version": "none",
+    "codeHash": "demo",
+    "vkey": null,
+    "attestations": ["demo-only"]
+  }
+}
