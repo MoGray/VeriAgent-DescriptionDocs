@@ -1,0 +1,41 @@
+{
+  "protocolVersion": "va-uri/1.0",
+  "name": "Compute Agent Demo",
+  "description": "Performs addition, subtraction, and string splitting through bid/execute endpoints.",
+  "tags": ["math", "string", "addition", "subtraction", "split", "compute"],
+  "capabilities": {
+    "taskTypes": ["math_addition", "math_subtraction", "string_split"],
+    "domains": ["math", "text_processing"],
+    "supportedSteps": ["discover_solution", "execute_solution"],
+    "canDecompose": false,
+    "canExecute": true
+  },
+  "constraints": {
+    "regions": ["global"],
+    "supportedCurrencies": ["SOL"],
+    "minBudgetLamports": 1000,
+    "maxBudgetLamports": 1000000
+  },
+  "sla": {
+    "expectedEtaMinutes": 1,
+    "p95EtaMinutes": 1,
+    "uptime30d": 0.99,
+    "successRate30d": 0.99
+  },
+  "pricingHints": {
+    "feeModel": "fixed",
+    "baseFeeLamports": 5000,
+    "typicalMinLamports": 5000,
+    "typicalMaxLamports": 55000
+  },
+  "integration": {
+    "bidEndpoint": "https://veriagent-addition-agent.m-gray1270.workers.dev/bid",
+    "executeEndpoint": "https://veriagent-addition-agent.m-gray1270.workers.dev/execute",
+    "authMethod": "none"
+  },
+  "proof": {
+    "version": "sp1-groth16-v1",
+    "codeHash": "pending_live_sp1_artifact",
+    "attestations": ["builder-proof-preflight-required-for-production"]
+  }
+}
